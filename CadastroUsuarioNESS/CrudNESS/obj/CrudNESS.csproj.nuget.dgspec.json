@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\PROJETONESS\\CadastroUsuarioNESS\\CadastroUsuarioNESS\\CadastroUsuarioNESS.csproj": {}
+    "D:\\PROJETONESS\\CadastroUsuarioNESS\\CrudNESS\\CrudNESS.csproj": {}
   },
   "projects": {
-    "D:\\PROJETONESS\\CadastroUsuarioNESS\\CadastroUsuarioNESS\\CadastroUsuarioNESS.csproj": {
+    "D:\\PROJETONESS\\CadastroUsuarioNESS\\CrudNESS\\CrudNESS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PROJETONESS\\CadastroUsuarioNESS\\CadastroUsuarioNESS\\CadastroUsuarioNESS.csproj",
-        "projectName": "CadastroUsuarioNESS",
-        "projectPath": "D:\\PROJETONESS\\CadastroUsuarioNESS\\CadastroUsuarioNESS\\CadastroUsuarioNESS.csproj",
+        "projectUniqueName": "D:\\PROJETONESS\\CadastroUsuarioNESS\\CrudNESS\\CrudNESS.csproj",
+        "projectName": "CrudNESS",
+        "projectPath": "D:\\PROJETONESS\\CadastroUsuarioNESS\\CrudNESS\\CrudNESS.csproj",
         "packagesPath": "C:\\Users\\Frank Castle\\.nuget\\packages\\",
-        "outputPath": "D:\\PROJETONESS\\CadastroUsuarioNESS\\CadastroUsuarioNESS\\obj\\",
+        "outputPath": "D:\\PROJETONESS\\CadastroUsuarioNESS\\CrudNESS\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -50,7 +50,7 @@
             "Microsoft.AspNetCore.Razor.Design": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[2.1.2, )"
+              "version": "[2.2.0, )"
             },
             "Microsoft.NETCore.App": {
               "suppressParent": "All",
