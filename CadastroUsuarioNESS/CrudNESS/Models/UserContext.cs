@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace CrudNESS.Models
 {
-    public class UsuarioContext : DbContext 
+    public class UserContext : DbContext 
     {
-        public UsuarioContext(DbContextOptions<UsuarioContext> options ) : base(options)
+        public UserContext(DbContextOptions<UserContext> options ) : base(options)
         {
         }
+
+        public DbSet<Usuario> Usuarios { get; set; }
     }
 }
