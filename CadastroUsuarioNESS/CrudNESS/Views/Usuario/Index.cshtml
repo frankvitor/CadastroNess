@@ -1,0 +1,46 @@
+﻿@model IEnumerable<CrudNESS.Models.Usuario>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h4>Usuários cadastrados</h4>
+<hr />
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cpf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefone)
+            </th>
+            <th>
+                <a asp-action="AdicionarOuEditar" class="btn btn-outline-success"><i class="far fa-plus-square"></i>Adicionar Usuário</a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cpf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefone)
+            </td>
+            <td>
+                <a asp-action="AdicionarOuEditar" asp-route-id="@item.Id"><i class="fa fa-marker fa-lg" />Editar</a> |
+                <a asp-action="Excluir" asp-route-id="@item.Id" class="text-danger" onclick="return confirm('Tem certeza que deseja excluir este usuário?')"><i class="fa fa-trash-alt fa-lg" />Excluir</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
