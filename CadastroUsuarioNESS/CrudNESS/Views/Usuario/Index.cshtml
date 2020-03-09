@@ -4,12 +4,10 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h4>Usuários cadastrados</h4>
+<hr />
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
+<table class="table table-hover">
     <thead>
         <tr>
             <th>
@@ -21,7 +19,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Telefone)
             </th>
-            <th></th>
+            <th>
+                <a asp-action="AdicionarOuEditar" class="btn btn-outline-success"><i class="far fa-plus-square"></i>Adicionar Usuário</a>
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -37,9 +37,8 @@
                 @Html.DisplayFor(modelItem => item.Telefone)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="AdicionarOuEditar" asp-route-id="@item.Id"><i class="fa fa-marker fa-lg" />Editar</a> |
+                <a asp-action="Excluir" asp-route-id="@item.Id" class="text-danger" onclick="return confirm('Tem certeza que deseja excluir este usuário?')"><i class="fa fa-trash-alt fa-lg" />Excluir</a>
             </td>
         </tr>
 }

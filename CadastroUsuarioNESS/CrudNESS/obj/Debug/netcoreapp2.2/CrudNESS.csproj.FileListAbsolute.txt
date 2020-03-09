@@ -30,5 +30,5 @@ D:\PROJETONESS\CadastroUsuarioNESS\CrudNESS\obj\Debug\netcoreapp2.2\CrudNESS.Vie
 D:\PROJETONESS\CadastroUsuarioNESS\CrudNESS\obj\Debug\netcoreapp2.2\CrudNESS.dll
 D:\PROJETONESS\CadastroUsuarioNESS\CrudNESS\obj\Debug\netcoreapp2.2\CrudNESS.pdb
 D:\PROJETONESS\CadastroUsuarioNESS\CrudNESS\obj\Debug\netcoreapp2.2\CrudNESS.csproj.CopyComplete
-D:\PROJETONESS\CadastroUsuarioNESS\CrudNESS\obj\Debug\netcoreapp2.2\Razor\Views\Usuario\Create.cshtml.g.cs
 D:\PROJETONESS\CadastroUsuarioNESS\CrudNESS\obj\Debug\netcoreapp2.2\Razor\Views\Usuario\Index.cshtml.g.cs
+D:\PROJETONESS\CadastroUsuarioNESS\CrudNESS\obj\Debug\netcoreapp2.2\Razor\Views\Usuario\AdicionarOuEditar.cshtml.g.cs

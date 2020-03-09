@@ -12,10 +12,13 @@ namespace CrudNESS.Models
     {
         [Key]
         public int Id { get; set; }
+        [Column(TypeName ="varchar(100)")]
         [Required]
         public string Nome { get; set; }
+        [Column(TypeName ="varchar(11)")]
         [Required]
         public string Cpf { get; set; }
+        [Column(TypeName ="varchar(11)")]
         public string Telefone { get; set; }
     }
 }

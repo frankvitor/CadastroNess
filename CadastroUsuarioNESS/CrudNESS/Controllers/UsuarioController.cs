@@ -24,134 +24,41 @@ namespace CrudNESS.Controllers
             return View(await _context.Usuarios.ToListAsync());
         }
 
-        #region listarId
-        //// GET: Usuario/Details/5
-        //public async Task<IActionResult> ListarPorId(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    var usuario = await _context.Usuarios
-        //        .FirstOrDefaultAsync(m => m.Id == id);
-        //    if (usuario == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    return View(usuario);
-        //}
-
         // GET: Usuario/Create
-        #endregion listarId
-
-        // GET: Usuario/Adicionar
-        public IActionResult Create()
+        public IActionResult AdicionarOuEditar(int id = 0)
         {
-            return View(new Usuario());
+            if (id == 0)
+                return View(new Usuario());
+            else
+                return View(_context.Usuarios.Find(id));
         }
 
-
+        // POST: Usuario/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> AdicionarOuEditar([Bind("Id,Nome,Cpf,Telefone")] Usuario usuario)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(usuario);
+                if (usuario.Id == 0)
+                    _context.Add(usuario);
+                else
+                    _context.Update(usuario);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             return View(usuario);
         }
 
-        #region editar
-        // GET: Usuario/Edit/5
-        //public async Task<IActionResult> Edit(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    var usuario = await _context.Usuarios.FindAsync(id);
-        //    if (usuario == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    return View(usuario);
-        //}
-
-        //// POST: Usuario/Edit/5
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Cpf,Telefone")] Usuario usuario)
-        //{
-        //    if (id != usuario.Id)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    if (ModelState.IsValid)
-        //    {
-        //        try
-        //        {
-        //            _context.Update(usuario);
-        //            await _context.SaveChangesAsync();
-        //        }
-        //        catch (DbUpdateConcurrencyException)
-        //        {
-        //            if (!UsuarioExists(usuario.Id))
-        //            {
-        //                return NotFound();
-        //            }
-        //            else
-        //            {
-        //                throw;
-        //            }
-        //        }
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    return View(usuario);
-        //}
-
         // GET: Usuario/Delete/5
-        #endregion editar
-
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Excluir(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var usuario = await _context.Usuarios
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (usuario == null)
-            {
-                return NotFound();
-            }
-
-            return View(usuario);
+            var usuario = await _context.Usuarios.FindAsync(id);
+            _context.Usuarios.Remove(usuario);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
-
-        #region delete
-        //// POST: Usuario/Delete/5
-        //[HttpPost, ActionName("Delete")]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> DeleteConfirmed(int id)
-        //{
-        //    var usuario = await _context.Usuarios.FindAsync(id);
-        //    _context.Usuarios.Remove(usuario);
-        //    await _context.SaveChangesAsync();
-        //    return RedirectToAction(nameof(Index));
-        //}
-
-        //private bool UsuarioExists(int id)
-        //{
-        //    return _context.Usuarios.Any(e => e.Id == id);
-        //}
-        #endregion delete
     }
 }
